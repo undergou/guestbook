@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=new_db", "root", "");
+require_once ('config.php');
 $ip = $_SERVER['REMOTE_ADDR'];
 $id = $_POST['id'];
 if($ip='::1') {

@@ -18,7 +18,7 @@ export default class BookApp extends React.Component{
         this.getMessages();
     }
     getMessages(){
-        fetch('http://localhost/projects-iamit/guestbook2/src/getData.php',
+        fetch('../src/getData.php',
             {
                 headers : {
                     "Content-type": "application/json; charset=UTF-8",
@@ -34,7 +34,7 @@ export default class BookApp extends React.Component{
     }
     addNewMessage(newMessage){
         let newMessageJson = 'name='+newMessage.name+'&email='+newMessage.email+'&message='+newMessage.message;
-        fetch('http://localhost/projects-iamit/guestbook2/src/addData.php',
+        fetch('../src/addData.php',
             {
                 headers : {
                     "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -54,7 +54,7 @@ export default class BookApp extends React.Component{
     }
     deleteMessage(id){
         let idJson = 'id='+id;
-        fetch('http://localhost/projects-iamit/guestbook2/src/deleteMessage.php',
+        fetch('../src/deleteMessage.php',
             {
                 headers : {
                     "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

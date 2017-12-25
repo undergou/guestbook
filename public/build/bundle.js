@@ -18741,7 +18741,7 @@ class BookApp extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         this.getMessages();
     }
     getMessages() {
-        fetch('http://localhost/projects-iamit/guestbook2/src/getData.php', {
+        fetch('../src/getData.php', {
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
                 "Accept": "application/json"
@@ -18754,7 +18754,7 @@ class BookApp extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     }
     addNewMessage(newMessage) {
         let newMessageJson = 'name=' + newMessage.name + '&email=' + newMessage.email + '&message=' + newMessage.message;
-        fetch('http://localhost/projects-iamit/guestbook2/src/addData.php', {
+        fetch('../src/addData.php', {
             headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
@@ -18771,7 +18771,7 @@ class BookApp extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     }
     deleteMessage(id) {
         let idJson = 'id=' + id;
-        fetch('http://localhost/projects-iamit/guestbook2/src/deleteMessage.php', {
+        fetch('../src/deleteMessage.php', {
             headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
@@ -18807,14 +18807,14 @@ class BookMessages extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
     constructor() {
         super();
         this.state = {
-            ip: ''
+            isAdmin: ''
         };
     }
     componentDidMount() {
-        fetch('http://localhost/projects-iamit/guestbook2/src/getIp.php').then(response => {
+        fetch('../src/checkIsAdmin.php').then(response => {
             return response.json();
         }).then(data => {
-            this.setState({ ip: data });
+            this.setState({ isAdmin: data });
         });
     }
     deleteMessage(id) {
@@ -18822,7 +18822,7 @@ class BookMessages extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
     }
     render() {
         const messages = this.props.messages.map((item, index) => {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message', key: index }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message-head' }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'bold' }, 'From:'), ' ', item.name, ' (', item.email, ')'), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message-text' }, item.message), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message-delete', style: { display: this.state.ip == '::1' ? 'block' : 'none' } }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { onClick: this.deleteMessage.bind(this, item.id) }, 'Delete')));
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message', key: index }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message-head' }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'bold' }, 'From:'), ' ', item.name, ' (', item.email, ')'), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message-text' }, item.message), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'message-delete', style: { display: this.state.isAdmin ? 'block' : 'none' } }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { onClick: this.deleteMessage.bind(this, item.id) }, 'Delete')));
         });
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null, messages);
     }

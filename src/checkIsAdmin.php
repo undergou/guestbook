@@ -1,3 +1,4 @@
 <?php
 $ip = $_SERVER['REMOTE_ADDR'];
-echo json_encode($ip);
+
+echo json_encode($ip=='::1');
