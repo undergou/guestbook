@@ -1,0 +1,22 @@
+body{
+    font: 14px Helvetica;
+    color: #2f2f2f;
+}
+.wrap{
+    width: 600px;
+    margin: 10px auto;
+    background: #eeeeee;
+    border: 1px solid #a4a4a4;
+    border-radius: 5px;
+    box-shadow: 1px 0 10px gray;
+    padding: 10px 0 10px 0;
+}
+h1{
+    font-size: 26px;
+    color: #0e0e2c;
+    text-align: center;
+}
+.error{
+    font-weight: bold;
+    color: red;
+}

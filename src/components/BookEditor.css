@@ -1,0 +1,62 @@
+.editor{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #0f0b2d;
+    padding: 0 40px;
+}
+.add-message{
+    font-size: 24px;
+    text-align: center;
+}
+.editor-email{
+    margin: 15px 0;
+}
+input, textarea{
+    margin-top: 5px;
+}
+input, textarea{
+    outline: none;
+}
+.input-green{
+    border: 1px solid green;
+}
+.input-green:focus{
+    border: 1px solid green;
+    box-shadow: 0 0 5px green;
+}
+.input-red{
+    border: 1px solid red;
+}
+.input-red:focus{
+    border: 1px solid red;
+    box-shadow: 0 0 5px red;
+}
+.add-btn, .disabled-btn{
+    margin: 10px 0 20px 0;
+    border: 1px solid #058506;
+    background: #1c9f1b;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    color: white;
+}
+.add-btn:hover {
+    border: 1px solid #056006;
+    background: #248f04;
+    cursor: pointer;
+}
+.disabled-btn:hover{
+    border: 1px solid #056006;
+    background: #248f04;
+    cursor: not-allowed;
+}
+.send-message-ok{
+    margin: 5px 0 15px 0;
+    color: green;
+    font-weight: bold;
+}
+.send-message-error{
+    margin: 5px 0 15px 0;
+    color: red;
+    font-weight: bold;
+}

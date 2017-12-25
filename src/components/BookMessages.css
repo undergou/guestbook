@@ -1,0 +1,34 @@
+.message{
+    margin: 0 20px;
+    padding: 10px 20px;
+    border-bottom: 1px solid darkgray;
+}
+.message:hover{
+    opacity: 0.8;
+}
+.message-head{
+    text-align: right;
+    font-size: 20px;
+    color: #171d2d;
+}
+.bold{
+    font-weight: bold;
+}
+.message-text{
+    font-size: 18px;
+    color: #0f0b2d;
+    margin-top: 15px;
+}
+.message-delete{
+    margin: 10px 0;
+    text-align: right;
+}
+.message-delete span{
+    text-decoration: none;
+    font-size: 16px;
+    color: red;
+}
+.message-delete:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
